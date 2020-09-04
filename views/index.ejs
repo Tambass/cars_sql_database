@@ -1,0 +1,30 @@
+<%- include('./partials/header')-%>
+
+<div class="container">
+    <div class="row">
+
+        <% cars.forEach(function(car) {%>
+
+        <div class="col-md-4">
+
+            <div class="card" style="width: 18rem;">
+                <img src="<%=car.Photo%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= car.Model%></h5>
+                    <p class="card-text"><%= car.Constructeur%></p>
+                    <p class="card-text"><%= car.Annee%></p>
+                    <p class="card-text"><%= car.Prix%></p>
+                    <a href="/show/<%=car.id%>" class="btn btn-primary">Voir</a>
+                    <a href="/car/edit/<%=car.id%>" class="btn btn-secondary">Editer</a>
+                    <a href="/delete/<%=car.id%>" class="btn btn-danger">Supprimer</a>
+                </div>
+            </div>
+
+        </div>
+
+        <%});%>
+
+    </div>
+</div>
+
+<%- include('./partials/footer')-%>

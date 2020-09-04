@@ -1,0 +1,26 @@
+{
+  "name": "cars_sql_database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tambass/cars_sql_database.git"
+  },
+  "author": "Fabien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tambass/cars_sql_database/issues"
+  },
+  "homepage": "https://github.com/Tambass/cars_sql_database#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1"
+  }
+}
