@@ -4,14 +4,14 @@
     <div class="row">
         <div class="col-md-12">
 
-            <form>
+            <form method="POST" action="/car/edit/<%=car.id%>?_method=PUT">
                 <div class="form-group">
                     <label for="model">Model</label>
-                    <input type="text" class="form-control" value="<%=car.Model%>">
+                    <input type="text" class="form-control" name="model" value="<%=car.Model%>">
                 </div>
                 <div class="form-group">
                     <label for="factory">Constructeur actuelle : <%=car.Constructeur%></label>
-                    <select class="form-control">
+                    <select class="form-control" name="factory">
                         <% factories.forEach(function(factory) {%>
                         <option value="<%=factory.id%>"><%=factory.name%></option>
                         <%});%>
@@ -19,19 +19,23 @@
                 </div>
                 <div class="form-group">
                     <label for="year">Année</label>
-                    <input type="text" class="form-control" value="<%=car.Annee%>">
+                    <input type="text" class="form-control" name="year" value="<%=car.Annee%>">
                 </div>
                 <div class="form-group">
                     <label for="price">Prix</label>
-                    <input type="text" class="form-control" value="<%=car.Prix%>">
+                    <input type="text" class="form-control" name="price" value="<%=car.Prix%>">
                 </div>
                 <div class="form-group">
-                    <label for="factory">Carburant actuelle : <%=car.Energie%></label>
-                    <select class="form-control">
+                    <label for="energy">Carburant actuelle : <%=car.Energie%></label>
+                    <select class="form-control" name="energy">
                         <% energies.forEach(function(energy) {%>
                         <option value="<%=energy.id%>"><%=energy.name%></option>
                         <%});%>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="image">Url de l'image</label>
+                    <input type="text" class="form-control" name="image" value="<%=car.Photo%>">
                 </div>
                 <button class="btn btn-primary" type="submit">Modifier</button>
             </form>

@@ -39,5 +39,36 @@ module.exports = {
     });
   },
 
-  putEditPage: (req, res) => {},
+  putEditPage: (req, res) => {
+    const id = req.params.id;
+    const model = req.body.model;
+    const factory = req.body.factory;
+    const year = req.body.year;
+    const price = req.body.price;
+    const energy = req.body.energy;
+    const image = req.body.image;
+
+    let query =
+      "UPDATE cars SET name = '" +
+      model +
+      "', factoryId = '" +
+      factory +
+      "', years = '" +
+      year +
+      "', price = '" +
+      price +
+      "', energyId = '" +
+      energy +
+      "', image = '" +
+      image +
+      "' WHERE id = '" +
+      id +
+      "'";
+    db.query(query, (err, result) => {
+      if (err) {
+        return res.send(err);
+      }
+      res.redirect("/");
+    });
+  },
 };
