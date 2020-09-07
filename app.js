@@ -41,16 +41,23 @@ global.db = db;
 
 // Controller
 
-const { getCars } = require("./controllers/cars");
+const { getCars, getAddCar, addCar } = require("./controllers/cars");
 const { getSingleCar } = require("./controllers/show");
 const { getEditPage, putEditPage } = require("./controllers/upload");
+const { getFactories, getFactory, putFactory, deleteFactory } = require("./controllers/factories");
 
 // Routes
 
 app.get("/", getCars);
+app.get("/add", getAddCar);
+app.post("/add", addCar);
 app.get("/show/:id", getSingleCar);
 app.get("/car/edit/:id", getEditPage);
 app.put("/car/edit/:id", putEditPage);
+app.get("/factories", getFactories);
+app.get("/factories/edit/:id", getFactory);
+app.put("/factories/:id", putFactory);
+app.delete("/factories/:id", deleteFactory);
 
 app.listen(PORT, function () {
   console.log("Écoute le port : ", PORT);

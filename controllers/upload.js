@@ -21,9 +21,9 @@ module.exports = {
             c.id= " +
         id,
 
-      "SELECT name FROM factories",
+      "SELECT id, name FROM factories",
 
-      "SELECT name FROM energies",
+      "SELECT id, name FROM energies",
     ];
 
     db.query(query.join(";"), (err, result) => {
@@ -41,7 +41,7 @@ module.exports = {
 
   putEditPage: (req, res) => {
     const id = req.params.id;
-    const model = req.body.model;
+    const name = req.body.name;
     const factory = req.body.factory;
     const year = req.body.year;
     const price = req.body.price;
@@ -50,7 +50,7 @@ module.exports = {
 
     let query =
       "UPDATE cars SET name = '" +
-      model +
+      name +
       "', factoryId = '" +
       factory +
       "', years = '" +
@@ -68,6 +68,7 @@ module.exports = {
       if (err) {
         return res.send(err);
       }
+      //res.json(result[0]);
       res.redirect("/");
     });
   },

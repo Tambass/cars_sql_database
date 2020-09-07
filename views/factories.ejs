@@ -1,0 +1,52 @@
+<%- include('./partials/header')-%>
+
+<h1>Liste des constructeurs</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+
+          </tr>
+        </thead>
+
+        <% factories.forEach(function(factory) {%>
+
+        <tbody>
+          <tr>
+
+            <th scope="row"><%=factory.id%></th>
+            <td><%=factory.name%></td>
+            <td>
+              <button type="button" class="btn btn-primary">
+                <a style="color: #fff;" href="factories/edit/<%=factory.id%>">Modifier</a>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger">
+                <a style="color: #fff;" href="#">Supprimer</a>
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+
+        <%});%>
+
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
+<%- include('./partials/footer')-%>

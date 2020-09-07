@@ -1,0 +1,19 @@
+<%- include('./partials/header')-%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" action="/factories/edit/<%=factory.id%>?_method=PUT">
+                <div class="form-group">
+
+                    <label for="factory">Constructeur</label>
+                    <input type="text" class="form-control" name="name" value="<%=factory.name%>">
+
+                </div>
+                <button class="btn btn-primary" type="submit">Modifier</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer')-%>
